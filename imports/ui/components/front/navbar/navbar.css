@@ -1,0 +1,14 @@
+.main.menu{
+	border: none !important;
+	border-bottom: 2px solid #D62116 !important;
+	height: 70px !important;
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+	border-radius: 0 !important;
+}
+
+.nav-logo{
+	max-height: 50px;
+	margin-top: 0;
+	margin-bottom: 0;
+}

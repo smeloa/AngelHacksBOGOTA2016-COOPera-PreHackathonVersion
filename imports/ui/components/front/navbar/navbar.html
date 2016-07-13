@@ -1,0 +1,48 @@
+<template name="Front_navbar">
+	<div class="ui large borderless menu main">
+		<div class="ui container">
+			<div class="item">
+				{{#if currentUser}}
+					<a href="{{path 'myEvents'}}">
+						<img src="/images/logo_h.png" alt="logo indesign" style="max-height: 60px; padding-top: 10px;">
+					</a>
+					{{else}}
+					<a href="{{path 'home'}}">
+						<img src="/images/logo_h.png" alt="logo indesign" style="max-height: 60px; padding-top: 10px;">
+					</a>
+				{{/if}}
+			</div>
+			{{#if currentUser}}
+				<a href="{{path 'myEvents'}}" class="{{isSelectedItem 'myEvents'}} item">Inicio</a>
+				{{else}}
+				<a href="{{path 'home'}}" class="{{isSelectedItem 'home'}} item">Inicio</a>
+			{{/if}}
+			{{#if currentUser}}
+				<a href="{{path 'search'}}" class="{{isSelectedItem 'search'}} item">Eventos</a>
+				<a href="{{path 'organizations'}}" class="{{isSelectedItem 'organizations'}} item">Organizaciones</a>
+				{{#if isOrganization}}
+				<a href="{{path 'eventCreate'}}" class="{{isSelectedItem 'eventCreate'}} item">Crear</a>
+				{{/if}}
+			{{/if}}
+			<div class="right menu">
+				{{#if currentUser}}
+					<div class="ui simple dropdown item">
+						<a href="#" style="color: black">{{currentUser.profile.name}}</a>
+						<i class="ui dropdown icon"></i>
+						<div class="menu">
+							<a class="{{isSelectedItem 'account'}} item" href="{{path 'account'}}">Mi cuenta</a>
+							<a class="{{isSelectedItem 'myEvents'}} item" href="{{path 'myEvents'}}">Mis eventos</a>
+							{{#if isInRole 'admin' 'default-group'}}
+								<a class="item" href="/admin">Panel de Control</a>
+							{{/if}}
+							<a class="item logout">Cerrar Sesión</a>
+						</div>
+					</div>
+				{{else}}
+					<a href="#" class="item login">Inicia Sesión</a>
+					<a href="{{path 'register'}}" class="item register">Registrate</a>
+				{{/if}}
+			</div>
+		</div>
+	</div>
+</template>

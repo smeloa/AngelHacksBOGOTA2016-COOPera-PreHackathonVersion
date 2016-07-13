@@ -1,0 +1,48 @@
+<template name="eventCard">
+	<!-- Event view component -->
+	<div class="ui link card">
+		<div class="image">
+			{{#if mainImage}}
+				<img src="{{mainImage.url}}">
+			{{else}}
+				<img src="/images/defaults/event.jpg">
+			{{/if}}
+
+			{{#if organization.logo}}
+				<img src="{{organization.logo.url}}" class="card-org-logo">
+			{{else}}
+				<img src="/images/defaults/org-logo.jpg" class="card-org-logo">
+			{{/if}}
+		</div>
+		<div class="content">
+			<a class="header">{{name}}</a>
+			<div class="meta">
+				<span class="date"><i class="icon calendar"></i>{{date}}</span>
+				<span class="date"><i class="icon marker"></i>{{cityData.name}}, {{cityData.country}}</span>
+			</div>
+			<div class="description">
+				{{stringLimit shortDescription 200}}
+			</div>
+		</div>
+		<div class="extra content">
+			<div class="ui statistics">
+				<div class="mini statistic">
+					<div class="value">{{donationProgress}}%</div>
+					<div class="label">Funded</div>
+				</div>
+				<div class="mini statistic">
+					<div class="value">{{volunteersCount}}</div>
+					<div class="label">Volunteers</div>
+				</div>
+				<div class="mini statistic">
+					<div class="value">{{sponsorCount}}</div>
+					<div class="label">Sponsors</div>
+				</div>
+			</div>
+		</div>
+		<div class="ui bottom attached green progress" id="donationProgress{{_id}}">
+			<div class="bar">{{progress}}</div>
+		</div>
+	</div>
+	<!-- Event view component -->
+</template>

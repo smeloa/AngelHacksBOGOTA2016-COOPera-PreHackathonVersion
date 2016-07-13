@@ -1,0 +1,25 @@
+.home-cover{
+	background-image: url('/images/fp/header2.jpg');
+	height: 500px;
+}
+
+.home.button {
+	font-size: 2rem;
+	width: 100%;
+}
+
+.mini.statistic {
+	margin-bottom: 0 !important;
+}
+
+.mini.statistic .value {
+	font-size: 0.9rem !important;
+	font-weight: bold !important;
+}
+
+.mini.statistic .label {
+	font-size: 0.8rem !important;
+	font-weight: 300 !important;
+	text-transform: none !important;
+	color: rgba(0, 0, 0, 0.4) !important;
+}

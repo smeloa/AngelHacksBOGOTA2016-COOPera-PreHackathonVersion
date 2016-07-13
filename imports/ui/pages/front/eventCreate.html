@@ -1,0 +1,86 @@
+<template name="eventCreate">
+	<div class="ui container margin-large">
+		<h1 class="ui dividing header">Crear evento</h1>
+
+		<form id="eventCreateForm" class="ui form">
+			<h3 class="text-primary">Datos del evento</h3>
+			<div class="ui three fields">
+				<div class="field">
+					<label>Nombre del evento</label>
+					<input name="name" placeholder="Nombre">
+				</div>
+
+				<div class="field">
+					<label>Categoría</label>
+					<select class="ui search selection dropdown" id="category" name="category">
+						<option value="">Selecciona una categoría</option>
+						{{#each categories}}
+							<option value={{_id}}>{{name}}</option>
+						{{/each}}
+					</select>
+				</div>
+
+				<div class="field">
+					<label>Fecha</label>
+					<input type="date" name="scheduledDate" placeholder="Fecha">
+				</div>
+			</div>
+
+			<hr>
+
+			<h3 class="text-primary">Información de contacto</h3>
+			<div class="ui two fields">
+				<div class="field">
+					<label>Teléfono</label>
+					<input name="contactPhone" placeholder="Telefono">
+				</div>
+
+				<div class="field">
+					<label>Dirección</label>
+					<input name="address" placeholder="Dirección">
+				</div>
+
+				<div class="field">
+					<label>Ciudad</label>
+					<select class="ui search selection dropdown" id="city" name="city">
+						<option value="">Selecciona una ciudad</option>
+						{{#each cities}}
+							<option value={{_id}}>{{name}}</option>
+						{{/each}}
+					</select>
+				</div>
+
+			</div>
+
+			<hr>
+
+			<h3 class="text-primary">Presupuesto y voluntarios</h3>
+			<div class="ui three fields">
+				<div class="field">
+					<label>Presupuesto esperado</label>
+					<input type="number" name="targetBudget" placeholder="Presupuesto esperado">
+				</div>
+
+				<div class="field">
+					<label>Voluntarios esperados</label>
+					<input type="number" name="targetVolunteers" placeholder="Voluntarios esperados">
+				</div>
+			</div>
+
+			<hr>
+			<h3 class="text-primary">Descripción</h3>
+
+			<div class="field">
+				<label>Resumida</label>
+				<textarea name="shortDescription" rows="3" style="width: 100%" placeholder="Describe un resumen del evento..."></textarea>
+			</div>
+
+			<div class="field">
+				<label>Detallada</label>
+				<textarea name="detailedDescription" rows="8" style="width: 100%" placeholder="Describe detalladamente el evento..."></textarea>
+			</div>
+
+			<button class="ui green huge button">Guardar</button>
+		</form>
+	</div>
+</template>

@@ -1,0 +1,63 @@
+<template name="home">
+	<!-- Image cover -->
+	<div class="bg-cover home-cover">
+		<div class="ui container">
+			<h1 class="text-center text-contrast" style="font-size: 4em ;padding-top: 100px">
+				<span style="background-color: rgba(0,0,0,0.6)">¿Que causa vas a soportar hoy?</span>
+				<br>
+				<br>
+				<div class="ui four column centered grid">
+					<div class="column">
+						<a href="" class="ui massive blue home button">Voluntario</a>
+					</div>
+
+					<div class="column">
+						<a href="" class="ui massive orange home button">Organización</a>
+					</div>
+
+					<div class="column">
+						<a href="" class="ui massive green home button">Patrocinador</a>
+					</div>
+				</div>
+			</h1>
+		</div>
+	</div>
+	<!-- Image cover end -->
+
+	<div style="background-color: #F9F9F9; padding: 30px 0">
+		<div class="ui container">
+			<!-- Featured events -->
+			<h2 class="text-muted">Events we love: Nombre del evento</h2>
+
+			{{> eventWide}}
+			<!-- Featured events -->
+		</div>
+	</div>
+
+	<!-- Download app -->
+	<div style="margin-top: 30px;">
+		<div class="ui container">
+			<div class="ui grid">
+				<div class="ten wide column">
+					<h1 style="margin-top: 40px;">
+						Descarga nuestra aplicación
+						<br>
+						para dispositivos móviles
+					</h1>
+
+					<a href="#">
+						<img src="/images/fp/app_store.png" alt="descarga desde el app store" style="max-height: 65px">
+					</a>
+					<a href="#">
+						<img src="/images/fp/play_store.svg" alt="descarga desde el app store" style="max-height: 50px">
+					</a>
+				</div>
+
+				<div class="six wide column">
+					<img src="/images/fp/app.png" alt="app" style="margin-bottom: 0">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Download app end -->
+</template>

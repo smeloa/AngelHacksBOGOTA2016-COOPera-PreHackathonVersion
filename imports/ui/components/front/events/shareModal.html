@@ -1,0 +1,22 @@
+<template name="shareModal">
+	<div class="ui small modal" id="shareEventModal">
+		<div class="ui header text-center">Compartelo con el resto del mundo</div>
+
+		<div class="content">
+			<div class="ui two huge buttons">
+				<button class="ui facebook button"><i class="facebook icon"></i>Compartir</button>
+				<button class="ui twitter button"><i class="twitter icon"></i>Compartir</button>
+			</div>
+
+			<div class="ui dividing header">Compartir por correo</div>
+			<form class="ui form" id="inviteForm">
+				<div class="field">
+					<label>Correos</label>
+					<input name="emails" placeholder="emails">
+				</div>
+
+				<button class="ui fluid large green button">Invitar</button>
+			</form>
+		</div>
+	</div>
+</template>

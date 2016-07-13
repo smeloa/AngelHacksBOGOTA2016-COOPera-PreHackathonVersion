@@ -1,0 +1,69 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-base             # Packages every Meteor app needs to have
+mobile-experience       # Packages for a great mobile UX
+mongo                   # The database Meteor supports right now
+blaze-html-templates    # Compile .html files into Meteor Blaze views
+reactive-var            # Reactive variable for tracker
+reactive-dict           # Reactive dictionary for tracker
+jquery                  # Helpful client-side library
+tracker                 # Meteor's client-side reactive programming library
+
+standard-minifier-css   # CSS minifier run for production mode
+standard-minifier-js    # JS minifier run for production mode
+es5-shim                # ECMAScript 5 compatibility for older browsers.
+ecmascript              # Enable ECMAScript2015+ syntax in app code
+
+
+# BASE
+kadira:flow-router
+kadira:blaze-layout
+accounts-password
+alanning:roles
+force-ssl
+
+# BACKEND
+ddp-rate-limiter
+aldeed:simple-schema
+dburles:collection-helpers
+aldeed:collection2
+mdg:validated-method
+reywood:publish-composite
+tmeasday:publish-counts
+peerlibrary:reactive-publish
+lookback:emails
+email
+cfs:standard-packages
+cfs:base-package
+cfs:gridfs
+
+# FRONTEND
+indesign:ganalytics
+semantic:ui
+flemay:less-autoprefixer
+lepozepo:accounting
+momentjs:moment
+themeteorchef:bert
+swiper:swiper
+
+# TESTING
+meteortoys:allthings
+
+# check
+# lepozepo:cloudinary
+# amplify
+# biasport:facebook-sdk
+# percolate:synced-cron
+# http
+
+
+# MOBILE
+# 255kb:meteor-status
+# indesign:ratchet
+# fortawesome:fontawesome
+# session
+# themeteorchef:jquery-validation

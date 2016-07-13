@@ -1,0 +1,78 @@
+<template name="myEvents">
+	<div style="min-height: 300px; background-color: #6CA97F; margin-top: 14px;">
+		<div class="ui container">
+			<div class="ui grid">
+				<div class="nine wide column">
+					<div class="events-next-event-container">
+						<h3 class="text-contrast">Tu proximo evento</h3>
+
+						<div>
+							<div style="background-color: white; width: 120px; display: inline-block">
+								<div style="background-color: red; margin: 0; padding: 5px">
+									<h2 class="text-contrast text-center">{{dateMonth next_event.scheduledDate}}</h2>
+								</div>
+								<div class="text-center" style="font-size: 3rem; margin-top: 0; padding: 30px">{{dateDay next_event.scheduledDate}}</div>
+							</div>
+
+							<div style="display: inline-block; padding: 0 10px" class="text-contrast">
+								<h4 style="margin: 0 0 10px 0">Organizador</h4>
+								<h1 style="margin: 0 0 10px 0">{{next_event.name}}</h1>
+								<p>{{next_event.address}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="seven wide column">
+					<div class="events-info-container">
+						<div class="near-events-circle text-center text-contrast text-h2">
+							{{my_events_count}}
+						</div>
+						{{#if isVolunteer}}
+						<span class="text-contrast text-h2">Eventos en los que participas</span>
+						<br>
+						<div class="near-events-circle text-center text-contrast text-h2 margin-top-small">
+							32
+						</div>
+						<span class="text-contrast text-h2">Eventos recomendados para ti</span>
+						{{/if}}
+						{{#if isOrganization}}
+						<span class="text-contrast text-h2">Eventos que estoy organizando</span>
+						<br>
+						<div class="near-events-circle text-center text-contrast text-h2 margin-top-small">
+							32
+						</div>
+						<span class="text-contrast text-h2">Eventos ejecutados</span>
+						{{/if}}
+						{{#if isSponsor}}
+						<span class="text-contrast text-h2">Eventos que patrocinas</span>
+						<br>
+						<div class="near-events-circle text-center text-contrast text-h2 margin-top-small">
+							32
+						</div>
+						<span class="text-contrast text-h2">Eventos recomendados para ti</span>
+						{{/if}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="ui container margin-large">
+		{{#if isVolunteer}}
+		<h1 class="ui dividing header">Eventos a los que voy a asistir</h1>
+		{{/if}}
+		{{#if isOrganization}}
+		<h1 class="ui dividing header">Eventos que estoy organizando</h1>
+		{{/if}}
+		{{#if isSponsor}}
+		<h1 class="ui dividing header">Eventos que estoy patrocinando</h1>
+		{{/if}}
+		<div class="ui three cards">
+			{{#each my_events}}
+				{{> eventCard}}
+			{{/each}}
+		</div>
+	</div>
+</template>

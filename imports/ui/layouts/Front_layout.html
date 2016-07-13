@@ -1,0 +1,18 @@
+<template name="Front_layout">
+	<!-- Render Navbar -->
+	{{> Front_navbar}}
+	<!-- Render Navbar -->
+
+	<!-- Render content -->
+	{{> Template.dynamic template=content}}
+	<!-- Render content -->
+
+	<!-- Render Footer -->
+	{{> Front_footer}}
+	<!-- Render Footer -->
+
+	<!-- Render authentication modals -->
+	{{> loginModal}}
+	{{> registerModal}}
+	<!-- Render authentication modals -->
+</template>

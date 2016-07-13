@@ -1,0 +1,196 @@
+<template name="register">
+	<div class="ui container margin-bottom-large">
+		<div class="align-center margin-top">
+			<div class="ui three huge buttons">
+				<button class="ui green button volunteer">
+					<span>
+						<i class="fa fa-check volunteer" aria-hidden="true"></i>
+						Soy voluntario
+					</span>
+				</button>
+				<button class="ui blue button ong">
+					<span>
+						<i class="fa fa-check ong hidden" aria-hidden="true"></i>
+						Soy organización
+					</span>
+				</button>
+				<button class="ui orange button sponsor">
+					<span>
+						<i class="fa fa-check sponsor hidden" aria-hidden="true"></i>
+						Soy patrocinador
+					</span>
+				</button>
+			</div>
+		</div>
+
+		<!-- Register segments container -->
+		<div class="ui horizontal segments ">
+			<!-- Volunteer register -->
+			<div class="ui green segment volunteer">
+				<form id="registerVolunteerForm" class="ui form">
+					<div class="ui grid">
+						<div class="nine wide column">
+							<div class="field">
+								<label>Nombre Completo</label>
+								<input name="name" placeholder="Nombre" required>
+							</div>
+
+							<div class="field">
+								<label>Teléfono</label>
+								<input name="phone" type="number" placeholder="Teléfono">
+							</div>
+
+							<div class="field">
+								<label>Correo electrónico</label>
+								<input name="email" type="email" placeholder="Correo electrónico" required>
+							</div>
+
+							<div class="field">
+								<label>Contraseña</label>
+								<input name="password" type="password" placeholder="Contraseña" required>
+							</div>
+						</div>
+
+						<div class="seven wide column">
+							<div class="field">
+								<label>¿Cuales categorías te interesan?</label>
+
+								<div class="ui two column grid">
+									{{#each categories}}
+										<div class="column">
+											<div class="ui checkbox">
+												<input type="checkbox" name="category" value="{{_id}}" id="{{_id}}">
+												<label for="{{_id}}">{{name}}</label>
+											</div>
+										</div>
+									{{/each}}
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<button class="ui green huge button margin-top">Regístrate</button>
+				</form>
+			</div>
+			<!-- Volunteer register -->
+
+			<!-- Sponsor register -->
+			<div class="ui orange segment sponsor hidden">
+				<form id="registerSponsorForm" class="ui form">
+					<div class="ui grid">
+						<div class="six wide column">
+							<div class="field">
+								<label>Nombre</label>
+								<input name="name" placeholder="Nombre Completo" required>
+							</div>
+
+							<div class="field">
+								<label>Teléfono</label>
+								<input name="phone" type="number" placeholder="Teléfono de contacto" required>
+							</div>
+
+							<div class="field">
+								<label>Correo electrónico</label>
+								<input name="email" type="email" placeholder="Correo electrónico" required>
+							</div>
+
+							<div class="field">
+								<label>Contraseña</label>
+								<input name="password" type="password" placeholder="Contraseña" required>
+							</div>
+						</div>
+
+						<div class="ten wide column">
+							<div class="field">
+								<label>Empresa</label>
+								<input name="company" placeholder="Nombre de la Empresa" required>
+							</div>
+
+							<div class="field">
+								<label>Dirección</label>
+								<input name="address" type="text" placeholder="Dirección" required>
+							</div>
+
+							<div class="two fields">
+								<div class="field">
+									<label>Teléfono de la empresa</label>
+									<input name="SponsorPhone" type="number" placeholder="Teléfono de la empresa" required>
+								</div>
+
+								<div class="field">
+									<label>URL (opcional)</label>
+									<input name="url" type="text" placeholder="http://">
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<button class="ui orange huge button margin-top">Regístrate</button>
+				</form>
+			</div>
+			<!-- Sponsor register -->
+
+			<!-- ONG register -->
+			<div class="ui blue segment ong hidden">
+				<form id="registerOngForm" class="ui form">
+					<div class="ui grid">
+						<div class="six wide column">
+							<div class="field">
+								<label>Nombre</label>
+								<input name="name" placeholder="Nombre Completo" required>
+							</div>
+
+							<div class="field">
+								<label>Teléfono</label>
+								<input name="phone" type="number" placeholder="Teléfono de contacto" required>
+							</div>
+
+							<div class="field">
+								<label>Correo electrónico</label>
+								<input name="email" type="email" placeholder="Correo electrónico" required>
+							</div>
+
+							<div class="field">
+								<label>Contraseña</label>
+								<input name="password" type="password" placeholder="Contraseña" required>
+							</div>
+						</div>
+
+						<div class="ten wide column">
+							<div class="field">
+								<label>Organización</label>
+								<input name="company" placeholder="Nombre de la ONG" required>
+							</div>
+
+							<div class="field">
+								<label>Dirección</label>
+								<input name="address" type="text" placeholder="Dirección" required>
+							</div>
+
+							<div class="ui two fields">
+								<div class="field">
+									<label>Teléfono de la ONG</label>
+									<input name="ONGphone" type="number" placeholder="Teléfono de la ONG" required>
+								</div>
+
+								<div class="field">
+									<label>URL (opcional)</label>
+									<input name="url" type="text" placeholder="http://">
+								</div>
+							</div>
+
+							<div class="field">
+								<label>Descripción</label>
+								<input name="description" type="text" placeholder="Descripción" required>
+							</div>
+						</div>
+					</div>
+
+					<button class="ui blue huge button margin-top">Regístrate</button>
+				</form>
+			</div>
+			<!-- ONG register -->
+		</div>
+		<!-- Register segments container -->
+	</div>
+</template>

@@ -1,0 +1,27 @@
+<template name="imageUploadModal">
+    <div class="ui small modal image-modal" id="imageUploadModal">
+        <div class="ui header text-center">Sube imagenes del Evento</div>
+        <div class="content">
+			<form id="imageUploadForm" class="ui form">
+				<div class="ui grid">
+					<div class="sixteen wide column">
+						<div class="field">
+							<label>Selecciona una imagen</label>
+							<input name="files" id="files" class="myFileInput" type="file" required/>
+						</div>
+					</div>
+					<div class="sixteen wide column">
+						<div class="field">
+							<label>Preview</label>
+							<div class="image-preview">
+								<img class="ui centered image" id="image-preview"/>
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr>
+				<input type="submit" class="ui large green button" value="Subir"/>
+			</form>
+        </div>
+    </div>
+</template>

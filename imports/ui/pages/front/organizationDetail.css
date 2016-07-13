@@ -1,0 +1,18 @@
+.org-logo {
+	position: absolute !important;
+	bottom: -75px !important;
+	left: calc(50vw - 75px) !important;
+	left: -webkit-calc(50vw - 75px) !important;
+	left: -moz-calc(50vw - 75px) !important;
+	border: 2px solid grey !important;
+}
+
+.org-detail-bg {
+	background-image: url('/images/defaults/org-cover.jpg') !important;
+	height: 500px !important;
+	position: relative !important;
+}
+
+.container.org {
+	margin-top: 80px !important;
+}

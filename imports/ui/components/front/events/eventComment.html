@@ -1,0 +1,14 @@
+<template name="eventComment">
+	<div class="comment">
+		<a class="avatar">
+			<img src="http://semantic-ui.com/images/avatar/small/joe.jpg">
+		</a>
+		<div class="content">
+			<a class="author">{{comment.user.profile.name}}</a>
+			<div class="metadata">
+				<span class="date">{{fromNow comment.createdAt}}</span>
+			</div>
+			<div class="text">{{comment.text}}</div>
+		</div>
+	</div>
+</template>

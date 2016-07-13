@@ -1,0 +1,99 @@
+<template name="organizationDetail">
+	<div class="bg-cover org-detail-bg">
+		<img src="/images/defaults/org-logo.jpg" class="ui small circular image org-logo">
+	</div>
+
+	<div class="ui container org">
+		<h1 class="ui dividing header text-center">Nombre de la organizacion</h1>
+
+		<div class="ui grid">
+			<div class="eleven wide column">
+				<div class="ui segment">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+			</div>
+
+			<div class="five wide column">
+				<div class="ui segment">
+					<button class="ui fluid huge green button">Seguir</button>
+
+					<div class="ui relaxed list">
+						<div class="item">
+							<i class="users icon"></i>
+							<div class="content">100 seguidores</div>
+						</div>
+
+						<div class="item">
+							<i class="calendar icon"></i>
+							<div class="content">3 eventos</div>
+						</div>
+
+						<div class="item">
+							<i class="marker icon"></i>
+							<div class="content">Bogotá, Colombia</div>
+						</div>
+
+						{{#if event.organization.url}}
+						  <div class="item">
+							  <i class="linkify icon"></i>
+							  <div class="content">
+								  <a href="#" class="text-muted">{{event.organization.url}}</a>
+							  </div>
+						  </div>
+						{{/if}}
+
+						<div class="item">
+							<i class="facebook icon"></i>
+							<div class="content">
+								<a href="#" class="text-muted">facebook.com</a>
+							</div>
+						</div>
+
+						<div class="item">
+							<i class="twitter icon"></i>
+							<div class="content">
+								<a href="#" class="text-muted">twitter.com</a>
+							</div>
+						</div>
+
+						<div class="item">
+							<i class="instagram icon"></i>
+							<div class="content">
+								<a href="#" class="text-muted">instagram.com</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="ui three large buttons">
+						<button class="ui facebook button">
+							<i class="facebook icon"></i>
+						</button>
+						<button class="ui instagram button">
+							<i class="thumbs outline up icon"></i>
+						</button>
+						<button class="ui twitter button">
+							<i class="twitter icon"></i>
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="sixteen wide column">
+				<h3 class="ui dividing header">Eventos de la organización</h3>
+				<div class="ui segment">
+					<div class="ui three cards">
+						{{> eventCard event=event}}
+						{{> eventCard event=event}}
+						{{> eventCard event=event}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

@@ -1,0 +1,135 @@
+/* CSS declarations go here */
+img {
+	max-width: 100%;
+	height: auto;
+	box-sizing: border-box;
+	border: 0;
+	vertical-align: middle;
+}
+
+hr {
+	box-sizing: content-box;
+	height: 0;
+	margin: 15px 0;
+	border: 0;
+	border-top: 1px solid #dddddd;
+}
+
+.align-center {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	margin-bottom: 15px;
+}
+
+.bg-cover{
+	background-repeat: no-repeat;
+	background-position: center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+
+/* ========================================================================
+Component: Bert alerts
+========================================================================== */
+.bert-container{
+	padding: 10px;
+	text-align: center;
+}
+
+.bert-content > p{
+	font-size: 2em !important;
+}
+
+/* ========================================================================
+Component: Text component
+========================================================================== */
+.text-contrast {
+	color: #ffffff !important;
+}
+
+.text-danger {
+	color: red !important;
+}
+
+.text-primary {
+	color: #1C7BBA !important;
+}
+
+.text-muted {
+	color: #999999 !important;
+}
+
+.text-center {
+	text-align: center !important;
+}
+
+.text-h1 {
+	font-size: 3rem;
+}
+
+.text-h2 {
+	font-size: 1.8rem;
+}
+
+.text-h3 {
+	font-size: 1.2rem;
+}
+
+.text-h4 {
+	font-size: 0.9rem;
+}
+
+.text-small {
+	font-size: 0.8rem;
+}
+
+
+/* ========================================================================
+Component: Margins component
+========================================================================== */
+.margin {
+	margin: 15px 0 !important;
+}
+
+.margin-small {
+	margin: 5px 0 !important;
+}
+
+.margin-large {
+	margin: 30px 0 !important;
+}
+
+.margin-top {
+	margin-top: 15px !important;
+}
+
+.margin-top-small {
+	margin-top: 5px !important;
+}
+
+.margin-top-large {
+	margin-top: 30px !important;
+}
+
+.margin-bottom {
+	margin-bottom: 15px !important;
+}
+
+.margin-bottom-small {
+	margin-bottom: 5px !important;
+}
+
+.margin-bottom-large {
+	margin-bottom: 30px !important;
+}
+
+/* ========================================================================
+Component: Visibility component
+========================================================================== */
+.hidden {
+	display: none !important;
+}

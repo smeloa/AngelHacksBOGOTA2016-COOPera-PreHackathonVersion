@@ -1,0 +1,164 @@
+<template name="eventDetail">
+    <div class="ui container" style="margin: 30px 0">
+        <h1 class="text-center">{{event.name}}</h1>
+        <p class="text-center text-muted">{{event.organization.name}}</p>
+
+        <div class="ui grid">
+            <div class="eleven wide column">
+
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        {{#each picture in pictures}}
+                            <div class="swiper-slide">
+                                <img src="{{picture.url}}" class="align-center event-image" alt="event image">
+                            </div>
+						{{else}}
+							<div class="swiper-slide">
+								<img src="/images/defaults/event.jpg" class="align-center event-image" alt="no event image">
+							</div>
+                        {{/each}}
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+
+                <div class="ui green progress tiny" id="donationProgress">
+                    <div class="bar"></div>
+                </div>
+
+                <div class="ui three statistics">
+					<div class="statistic">
+                        <div class="value">{{event.volunteersCount}}</div>
+                        <div class="label">
+							Voluntarios
+							<div class="text-muted text-center text-small">de {{number event.targetVolunteers}}</div>
+						</div>
+                    </div>
+
+                    <div class="statistic">
+                        <div class="value">{{event.donationProgress}}%</div>
+                        <div class="label">
+							Donado
+							<div class="text-muted text-center text-small">de {{money event.targetBudget}}</div>
+						</div>
+                    </div>
+
+                    <div class="statistic">
+                        <div class="value">{{event.sponsorCount}}</div>
+                        <div class="label">Patrocinadores</div>
+                    </div>
+                </div>
+
+                <div class="text-center text-muted" style="margin: 20px 0">
+                    <span>
+                        <i class="ui icon marker"></i>{{event.cityData.name}},
+                        {{event.cityData.country}}</span>
+                    <span>
+                        <i class="ui icon theme"></i>{{event.categoryName}}</span>
+                </div>
+
+                <hr>
+
+                <h2>About this event</h2>
+
+                <p style="font-size: 1rem">
+                    {{event.description}}
+                </p>
+
+				<div class="ui threaded comments" style="margin-top: 50px">
+					<h3 class="ui dividing header">Comentarios</h3>
+          {{#if currentUser}}
+          <form class="ui reply form" id="commentForm">
+            <div class="field">
+              <textarea name="text"></textarea>
+            </div>
+            <button class="ui blue labeled submit icon button">
+              <i class="icon edit"></i> Comentar
+            </button>
+          </form>
+          {{else}}
+          <h3 class="text-muted">Debes estar registrado para comentar</h3>
+          {{/if}}
+					{{#each comment in comments}}
+						{{> eventComment comment=comment}}
+					{{/each}}
+				</div>
+			</div>
+
+            <div class="five wide column">
+                <div class="ui segment">
+					{{#if isInRole 'admin'}}
+						{{#if event.isLoved}}
+							<button class="ui fluid huge blue button" id="toggleLoved"><i class="ui heart icon"></i>Event we love</button>
+						{{else}}
+							<button class="ui fluid huge grey button" id="toggleLoved">Event we love</button>
+						{{/if}}
+					{{/if}}
+                    {{#if isVolunteer}}
+                    {{#if event.isVolunteer}}
+                        <button class="ui fluid huge violet button margin-top" id="retireVolunteer">Soy voluntario</button>
+                    {{else}}
+                        <button class="ui fluid huge blue button margin-top" id="becomeVolunteer">Quiero ser voluntario</button>
+                    {{/if}}
+                    {{/if}}
+                    {{#if canDonate}}
+                    <button class="ui fluid huge green button margin-top" id="donateButton">Donar $</button>
+                      {{/if}}
+                    {{#if isOrganization}}
+                    <button class="ui fluid huge red button margin-top" id="imageUploadButton">Subir Imagenes</button>
+                    <a href="/events/{{event._id}}/edit" class="ui fluid huge orange button margin-top">Editar</a>
+                    {{/if}}
+
+					<img src="http://semantic-ui.com/images/avatar2/large/patrick.png" class="ui small circular image align-center margin-top-large">
+
+                    <h2 class="text-center">{{event.organization.name}}</h2>
+
+                    <div class="ui list">
+                        <div class="item">
+                            <i class="marker icon"></i>
+                            <div class="content">Bogotá, Colombia</div>
+                        </div>
+
+                        {{#if event.organization.url}}
+                          <div class="item">
+                              <i class="linkify icon"></i>
+                              <div class="content">
+                                  <a href="#" class="text-muted">{{event.organization.url}}</a>
+                              </div>
+                          </div>
+                        {{/if}}
+
+                        <div class="item">
+                            <i class="facebook icon"></i>
+                            <div class="content">
+                                <a href="#" class="text-muted">facebook.com</a>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <i class="twitter icon"></i>
+                            <div class="content">
+                                <a href="#" class="text-muted">twitter.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ui three large buttons">
+                        <button class="ui facebook button">
+                            <i class="facebook icon"></i>
+                        </button>
+                        <button class="ui instagram button">
+                            <i class="thumbs outline up icon"></i>
+                        </button>
+                        <button class="ui twitter button">
+                            <i class="twitter icon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{> donateModal}}
+    {{> shareModal}}
+    {{> imageUploadModal}}
+</template>

@@ -1,0 +1,33 @@
+<template name="Front_authLayout">
+	{{#if isLoggingIn}}
+		<!-- Render loading view -->
+		{{> loading}}
+		<!-- Render loading view -->
+	{{else}}
+		{{#if currentUser}}
+			<!-- Render Navbar -->
+			{{> Front_authNavbar}}
+			<!-- Render Navbar -->
+
+			<!-- Render content -->
+			{{> Template.dynamic template=content}}
+			<!-- Render content -->
+
+			<!-- Render Footer -->
+			{{> Front_footer}}
+			<!-- Render Footer -->
+		{{else}}
+			<!-- Render Navbar -->
+			{{> Front_navbar}}
+			<!-- Render Navbar -->
+
+			<!-- Render not authorized view -->
+			{{> notAuthorized}}
+			<!-- Render not authorized view -->
+
+			<!-- Render Footer -->
+			{{> Front_footer}}
+			<!-- Render Footer -->
+		{{/if}}
+	{{/if}}
+</template>

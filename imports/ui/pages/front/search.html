@@ -1,0 +1,59 @@
+<template name="search">
+	<!-- Search view -->
+	<div style="background-color: #F7F7F7">
+		<div class="ui container" style="padding: 30px 0">
+			<form id="form_id" class="ui form">
+				<div class="field">
+					<div class="three fields">
+						<div class="field">
+							<label>Nombre del evento</label>
+							<div class="ui icon input">
+								<input type="text" name="search" class="search" placeholder="Nombre del evento">
+								<i class="search icon"></i>
+							</div>
+						</div>
+
+						<div class="field">
+							<label>Categoría</label>
+							<select class="ui search selection dropdown" id="categoryId" name="categoryId">
+								<option value="">Selecciona una categoría</option>
+								{{#each categories}}
+									<option value={{_id}}>{{name}}</option>
+								{{/each}}
+							</select>
+						</div>
+
+						<div class="field">
+							<label>Ciudad</label>
+							<select class="ui search selection dropdown" id="cityId" name="cityId">
+								<option value="">Selecciona una ciudad</option>
+								{{#each cities}}
+									<option value={{_id}}>{{name}}</option>
+								{{/each}}
+							</select>
+						</div>
+
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- Search view -->
+
+	<!-- Search view -->
+	<div class="ui container" style="margin: 30px 0">
+		<h3 class="ui dividing header">{{eventsCount}} eventos encontrados</h3>
+
+		<div class="ui three cards">
+			{{#each events}}
+			   {{> eventCard}}
+			{{/each}}
+		</div>
+			{{#if remainingEvents}}
+				<div class="text-center" style="margin-top: 20px">
+					<button class="ui large basic grey button more">Ver más</button>
+				</div>
+			{{/if}}
+	</div>
+	<!-- Search view -->
+</template>
